@@ -3,7 +3,12 @@ const styles = theme => ({
         flexGrow: 1,
     },
     root: {
-        minHeight: "100vh"
+        position: "fixed",
+        left: 0,
+        top: 48,
+        right: 0,
+        maxHeight: "85%",
+        overflow: "scroll",
     },
 });
 

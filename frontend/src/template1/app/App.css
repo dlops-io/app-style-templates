@@ -27,7 +27,37 @@
   .App-link {
     color: #61dafb;
   }
+
+  /* .background {
+    background-image: url('background.jpeg');
+  } */
   
+  #bg {
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+    filter: brightness(40%);
+    z-index: -1;
+    /* background-color: black; */ /*  Use background-color with opacity */
+    /* background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%); */
+  }
+  #bg img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 50%;
+    min-height: 50%;
+    
+    /* opacity: 0.5; */ /*  Use opacity with background-color */
+  }
+
   @keyframes App-logo-spin {
     from {
       transform: rotate(0deg);

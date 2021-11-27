@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Drawer from '@material-ui/core/Drawer';
 import Typography from '@material-ui/core/Typography';
+import MediaQuery from 'react-responsive';
 
 
 import List from '@material-ui/core/List';
@@ -20,9 +21,9 @@ import Icon from '@material-ui/core/Icon';
 import { Link } from 'react-router-dom';
 
 
+
 import styles from './styles';
 
-import TOC from '../../components/TOC';
 
 const Header = (props) => {
     const { classes } = props;
@@ -47,28 +48,30 @@ const Header = (props) => {
 
     return (
         <div className={classes.root}>
-            <AppBar position="static" elevation={0}>
+            <AppBar position="fixed" color="transparent" elevation={0}>
                 <Toolbar variant="dense">
                     <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={toggleDrawer(true)}>
                         <MenuIcon />
                     </IconButton>
                     <Link to="/" className={classes.appLink}>
                         <Typography className={classes.appTitle} >
-                            ⚡ App Building Crash Course
+                            🍲 Foodie
                         </Typography>
                     </Link>
 
                     <div className={classes.grow} />
-                    <div>
-                        <IconButton color="inherit" component={Link} to="/">
-                            <Icon>home</Icon>
-                            <Typography variant="caption">&nbsp;Home</Typography>
-                        </IconButton>
-                        <IconButton color="inherit" component={Link} to="/currentmodel">
-                            <Icon>celebration</Icon>
-                            <Typography variant="caption">&nbsp;[Tutorial] Style Transfer</Typography>
-                        </IconButton>
-                    </div>
+                    <MediaQuery minWidth={512}>
+                        <div>
+                            <IconButton color="inherit" component={Link} to="/" className={classes.navItem}>
+                                <Icon>home</Icon>
+                                <Typography variant="caption">&nbsp;Menu 1</Typography>
+                            </IconButton>
+                            <IconButton color="inherit" component={Link} to="/currentmodel" className={classes.navItem}>
+                                <Icon>insights</Icon>
+                                <Typography variant="caption">&nbsp;Menu 2</Typography>
+                            </IconButton>
+                        </div>
+                    </MediaQuery>
                 </Toolbar>
             </AppBar>
             <Drawer open={drawerOpen} onClose={toggleDrawer(false)}>
@@ -79,7 +82,16 @@ const Header = (props) => {
                     onKeyDown={toggleDrawer(false)}
                 >
                     <div className={classes.list}>
-                        <TOC />
+                        <List>
+                            <ListItem button component={Link} to="/route1">
+                                <ListItemIcon><Icon>home</Icon></ListItemIcon>
+                                <ListItemText primary='Menu 1' />
+                            </ListItem>
+                            <ListItem button component={Link} to="/route2">
+                                <ListItemIcon><Icon>insights</Icon></ListItemIcon>
+                                <ListItemText primary='Menu 2' />
+                            </ListItem>
+                        </List>
                     </div>
                 </div>
             </Drawer>

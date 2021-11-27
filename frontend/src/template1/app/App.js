@@ -11,6 +11,7 @@ import Content from "../common/Content";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
 import DataService from '../services/DataService';
+// import background from './background.jpeg'
 
 
 const App = (props) => {
@@ -31,6 +32,9 @@ const App = (props) => {
             <AppRoutes />
           </Content>
           <Footer></Footer>
+          <div id="bg">
+            <img src="/background5.png" alt="" />
+          </div>
         </Router>
       </ThemeProvider>
     </React.Fragment>
