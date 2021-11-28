@@ -64,11 +64,11 @@ const Header = (props) => {
                         <div>
                             <IconButton color="inherit" component={Link} to="/" className={classes.navItem}>
                                 <Icon>home</Icon>
-                                <Typography variant="caption">&nbsp;Menu 1</Typography>
+                                <Typography variant="caption">&nbsp;Home</Typography>
                             </IconButton>
-                            <IconButton color="inherit" component={Link} to="/currentmodel" className={classes.navItem}>
-                                <Icon>insights</Icon>
-                                <Typography variant="caption">&nbsp;Menu 2</Typography>
+                            <IconButton color="inherit" component={Link} to="/" className={classes.navItem}>
+                                <Icon>set_meal</Icon>
+                                <Typography variant="caption">&nbsp;Recipes</Typography>
                             </IconButton>
                         </div>
                     </MediaQuery>
@@ -83,13 +83,13 @@ const Header = (props) => {
                 >
                     <div className={classes.list}>
                         <List>
-                            <ListItem button component={Link} to="/route1">
+                            <ListItem button component={Link} to="/">
                                 <ListItemIcon><Icon>home</Icon></ListItemIcon>
-                                <ListItemText primary='Menu 1' />
+                                <ListItemText primary='Home' />
                             </ListItem>
-                            <ListItem button component={Link} to="/route2">
-                                <ListItemIcon><Icon>insights</Icon></ListItemIcon>
-                                <ListItemText primary='Menu 2' />
+                            <ListItem button component={Link} to="/">
+                                <ListItemIcon><Icon>set_meal</Icon></ListItemIcon>
+                                <ListItemText primary='Recipes' />
                             </ListItem>
                         </List>
                     </div>
