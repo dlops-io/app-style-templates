@@ -21,6 +21,7 @@ import { styles, StyledTableRow, StyledTableCell } from './styles';
 const SymbolsList = (props) => {
     const { classes } = props;
     let { display } = props;
+    let { hideColumns } = props;
 
     console.log("================================== SymbolsList ======================================");
 
@@ -61,10 +62,16 @@ const SymbolsList = (props) => {
                         <StyledTableCell>Symbol</StyledTableCell>
                         <StyledTableCell>Name</StyledTableCell>
                         <StyledTableCell>Price</StyledTableCell>
-                        <StyledTableCell>Price Change</StyledTableCell>
+                        {!hideColumns &&
+                            <StyledTableCell>Price Change</StyledTableCell>
+                        }
                         <StyledTableCell>Price Change(%)</StyledTableCell>
-                        <StyledTableCell>Market Cap</StyledTableCell>
-                        <StyledTableCell>Volume</StyledTableCell>
+                        {!hideColumns &&
+                            <StyledTableCell>Market Cap</StyledTableCell>
+                        }
+                        {!hideColumns &&
+                            <StyledTableCell>Volume</StyledTableCell>
+                        }
                     </StyledTableRow>
                 </TableHead>
                 <TableBody>
@@ -79,14 +86,16 @@ const SymbolsList = (props) => {
                                     thousandSeparator={true}
                                 />
                             </StyledTableCell>
-                            <StyledTableCell>
-                                <NumberFormat
-                                    value={itm.change}
-                                    displayType="text"
-                                    decimalSeparator="."
-                                    decimalScale={2}
-                                />
-                            </StyledTableCell>
+                            {!hideColumns &&
+                                <StyledTableCell>
+                                    <NumberFormat
+                                        value={itm.change}
+                                        displayType="text"
+                                        decimalSeparator="."
+                                        decimalScale={2}
+                                    />
+                                </StyledTableCell>
+                            }
                             <StyledTableCell>
                                 <NumberFormat
                                     value={itm.change_pct}
@@ -97,8 +106,8 @@ const SymbolsList = (props) => {
 
                                 />
                             </StyledTableCell>
-                            <StyledTableCell>{itm.mkt_cap}</StyledTableCell>
-                            <StyledTableCell>{itm.volume}</StyledTableCell>
+                            {!hideColumns && <StyledTableCell>{itm.mkt_cap}</StyledTableCell>}
+                            {!hideColumns && <StyledTableCell>{itm.volume}</StyledTableCell>}
                         </StyledTableRow>
                     )}
                 </TableBody>

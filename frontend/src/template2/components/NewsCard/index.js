@@ -51,7 +51,7 @@ const NewsCard = (props) => {
                     <LinesEllipsis
                         className={classes.description}
                         text={news.description}
-                        maxLine='4'
+                        maxLine='6'
                         ellipsis=' ...'
                         basedOn='letters'
                         onReflow={handleContentReflow}

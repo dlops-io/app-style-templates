@@ -27,7 +27,6 @@ const Symbols = (props) => {
     // Handlers
 
 
-
     return (
         <div className={classes.root}>
             <main className={classes.main}>

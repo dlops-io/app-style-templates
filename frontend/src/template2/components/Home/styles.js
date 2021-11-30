@@ -15,6 +15,15 @@ const styles = theme => ({
     spacer: {
         padding: "10px",
     },
+    toolBar: {
+        paddingLeft: "0px",
+        paddingRight: "0px",
+        minHeight: "0px",
+    },
+    symbolFormControl: {
+        // margin: theme.spacing(1),
+        minWidth: 200,
+    },
 });
 
 export default styles;
